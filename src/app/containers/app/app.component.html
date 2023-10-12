@@ -1,5 +1,8 @@
 <div>
-  Hello Fitness App
+  <app-app-header [user]="user$ | async" (logout)="onLogout()">
+  </app-app-header>
+  <app-app-nav *ngIf="isAuthenticated">
+  </app-app-nav>
   <div class="wrapper">
     <router-outlet></router-outlet>
   </div>
