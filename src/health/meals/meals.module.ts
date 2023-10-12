@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {ReactiveFormsModule} from "@angular/forms";
 import {RouterModule, Routes} from "@angular/router";
 
-import {MealsComponent} from './meals/meals.component';
+import {MealsComponent} from './containers/meals/meals.component';
 
 export const ROUTES: Routes = [
   {path: "", component: MealsComponent}

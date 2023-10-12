@@ -1,6 +1,6 @@
 import {Injectable} from "@angular/core";
 import {Router} from "@angular/router";
-import {BehaviorSubject, Observable} from "rxjs";
+import {BehaviorSubject, map, Observable} from "rxjs";
 
 export interface User {
   email: string,
@@ -19,6 +19,10 @@ export class AuthService {
     if (savedUser) {
       this.setUser(JSON.parse(savedUser));
     }
+  }
+
+  get authState() {
+    return this.user$.pipe(map(u => u?.authenticated));
   }
 
   createUser(email: string, password: string): void {

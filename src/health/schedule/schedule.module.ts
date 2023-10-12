@@ -1,14 +1,22 @@
 import {NgModule} from "@angular/core";
-import {RouterModule} from "@angular/router";
+import {CommonModule} from "@angular/common";
+import {RouterModule, Routes} from "@angular/router";
+import {ReactiveFormsModule} from "@angular/forms";
 
 import {ScheduleComponent} from "./containers/schedule/schedule.component";
+
+export const ROUTES: Routes = [
+  {path: "", component: ScheduleComponent}
+];
 
 @NgModule({
   declarations: [
     ScheduleComponent
   ],
   imports: [
-    RouterModule
+    CommonModule,
+    ReactiveFormsModule,
+    RouterModule.forChild(ROUTES)
   ]
 })
 export class ScheduleModule {}
