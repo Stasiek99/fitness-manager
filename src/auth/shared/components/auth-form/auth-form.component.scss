@@ -45,6 +45,7 @@
 }
 
 .auth-form {
+  text-align: center;
   background: #fff;
   box-shadow: 0 3px 4px rgba(0,0,0,.1);
   border-radius: 3px;
@@ -70,8 +71,8 @@
     outline: 0;
     font-size: 16px;
     padding: 10px 15px;
-    margin: 0;
-    width: 100%;
+    margin: 5px 0;
+    width: 90%;
     background: #fafcfd;
     color: #5777a8;
     border: 1px solid #d1deeb;
@@ -81,10 +82,11 @@
     }
     &[type=email] {
       border-radius: 3px 3px 0 0;
+      margin-bottom: 5px;
     }
     &[type=password] {
       border-radius: 0 0 3px 3px;
-      margin: -1px 0 0;
+      //margin: -1px 0 0;
     }
   }
 }
