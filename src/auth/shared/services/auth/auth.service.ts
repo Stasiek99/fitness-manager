@@ -21,6 +21,10 @@ export class AuthService {
     }
   }
 
+  get user() {
+    return this.user$;
+  }
+
   get authState() {
     return this.user$.pipe(map(u => u?.authenticated));
   }
@@ -41,7 +45,7 @@ export class AuthService {
 
     const uniqueUserId: string = Date.now().toString();
     this.setUser({ email, uid: uniqueUserId, authenticated: true });
-    this.router.navigate(["/"]);
+    this.loginUser(email, password);
   }
 
   loginUser(email: string, password: string): void {
@@ -55,7 +59,9 @@ export class AuthService {
       user.authenticated = true;
       console.log(this.user$);
       this.setUser(user);
+      this.userSubject.next(user);
       this.router.navigate(["/"]);
+      localStorage.setItem(this.currentUserKey, JSON.stringify(user));
     } else {
       console.log("Błąd logowania. Sprawdź email i hasło");
     }
