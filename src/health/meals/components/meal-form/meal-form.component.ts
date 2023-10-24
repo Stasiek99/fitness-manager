@@ -16,7 +16,7 @@ export class MealFormComponent {
     name: ['', Validators.required],
     ingredients: this.fb.array([""])
   });
-  constructor(private fb: FormBuilder,) {
+  constructor(private fb: FormBuilder) {
   }
 
   get required() {

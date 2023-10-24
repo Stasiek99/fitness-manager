@@ -40,6 +40,8 @@
   &__food {
     padding: 30px;
     border-bottom: 1px solid #d1deeb;
+    overflow: hidden;
+    white-space: nowrap;
   }
   &__subtitle {
     display: flex;
@@ -83,7 +85,7 @@
   }
   &__remove {
     cursor: pointer;
-    background-image: url(/img/cross.svg);
+    background-image: url(/assets/img/cross.svg);
     background-size: 15px 15px;
     background-repeat: no-repeat;
     background-position: center center;
@@ -131,6 +133,8 @@
     padding: 10px 40px 10px 15px;
     margin: 0;
     width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
     background: #fff;
     color: #545e6f;
     flex-grow: 1;
