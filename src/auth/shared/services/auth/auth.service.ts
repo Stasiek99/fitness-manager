@@ -21,10 +21,6 @@ export class AuthService {
     }
   }
 
-  get user() {
-    return this.user$;
-  }
-
   get authState() {
     return this.user$.pipe(map(u => u?.authenticated));
   }

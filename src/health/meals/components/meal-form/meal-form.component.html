@@ -19,7 +19,7 @@
      </div>
    </div>
    <div formArrayName="ingredients">
-     <label *ngFor="let c of ingredients.controls; let i = index";>
+     <label *ngFor="let c of ingredients.controls; let i = index;">
        <input [formControlName]="i" placeholder="e.g. Eggs">
        <span class="meal-form__remove" (click)="removeIngredients(i)">
        </span>
